@@ -11,8 +11,16 @@ const options = {
   }
 }
 
-let request = https.request(options, (result) => {
-  console.log('Got response : ', result.statusCode)
+// [x] TODO : Read the data
+let request = https.request(options, (response) => {
+  let body = ''
+  console.log('Got response : ', response)
+  response.on('data', (data) => {
+    body = body + data
+  })
+  response.on('end', () => {
+    console.log(body)
+  })
 })
 
 request.end()
@@ -20,8 +28,6 @@ request.end()
 request.on('error', (e) => {
   console.log(e)
 })
-
-// TODO : Read the data
 // TODO :Parse the data
 // TODO : Print the data out
 
