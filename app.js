@@ -19,8 +19,18 @@ let request = https.request(options, (response) => {
     body = body + data
   })
   response.on('end', () => {
-    console.log(body)
+    //console.log(body)
+    //console.log(typeof(body))
+    //[x] TODO :Parse the data
+      // Convert String to JSON (Javascript Object)
+      let profile = JSON.parse(body)
+      console.log(profile.avatar_url)
+      //console.log(typeof(profile))
   })
+
+
+  // TODO : Print the data out
+
 })
 
 request.end()
@@ -28,9 +38,6 @@ request.end()
 request.on('error', (e) => {
   console.log(e)
 })
-// TODO :Parse the data
-// TODO : Print the data out
-
 
 // Beberapa Cara membuat function di Javascript
 // Cara 1 = Cara lama
