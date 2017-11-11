@@ -14,7 +14,7 @@ const options = {
 // [x] TODO : Read the data
 let request = https.request(options, (response) => {
   let body = ''
-  console.log('Got response : ', response)
+  //console.log('Got response : ', response)
   response.on('data', (data) => {
     body = body + data
   })
@@ -24,13 +24,11 @@ let request = https.request(options, (response) => {
     //[x] TODO :Parse the data
       // Convert String to JSON (Javascript Object)
       let profile = JSON.parse(body)
-      console.log(profile.avatar_url)
+      //console.log(profile.login + ' Owns ' + profile.public_repos + ' repo(s)')
       //console.log(typeof(profile))
+      //[x] TODO : Print the data out
+      console.log(`${profile.login} owns ${profile.public_repos} repo(s) and has  ${profile.followers} follower(s).`)
   })
-
-
-  // TODO : Print the data out
-
 })
 
 request.end()
