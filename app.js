@@ -8,6 +8,8 @@ let profile = require('./profile.js')
   profile.get('rizafahmi')
   profile.get('mrjuoss')
   profile.get('user-ngawur')
+
+  get adalah nama method dalam module profile
 */
 
 /*
