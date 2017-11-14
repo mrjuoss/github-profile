@@ -33,8 +33,20 @@ console.log(array_baru)
 
 */
 
+/*
 let profiles = ['rizafahmi', 'yofri', 'ronishak']
 
 profiles.map(user => {
   return profile.get(user)
 })
+*/
+/*
+  Bagaimana klo inputan username bukan berasal dari Hard Code malainkan dari User ?
+
+  Misal, node app.js mrjuoss rizafahmi dll
+
+  Caranya kita menggunakan process.argv()
+  Lihat dokumentasi API nodejs
+*/
+
+console.log(process.argv)
